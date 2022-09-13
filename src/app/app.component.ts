@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Jugadores } from './_interfaces/jugadores.interface';
+
+import * as JUGADORES from './../assets/data/jugadores.json'
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'proyectoTarea';
+
+  jugadores: Jugadores[] = [];
+  mostrar=true;
+
+  ngOnInit(){
+    this.jugadores =(JUGADORES as any).default;
+
+    console.log(this.jugadores)
+  }
+
+  
 }
+
+
